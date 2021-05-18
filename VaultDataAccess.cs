@@ -18,9 +18,9 @@ namespace AzureKeyVault
 
         // https://www.codeproject.com/Tips/1430794/Using-Csharp-NET-to-Read-and-Write-from-Azure-Key
 
-        public static string BASESECRETURI = "https://ssn-key-vaults-20210224.vault.azure.net/"; 
-        public static string CLIENT_ID = "4bf72f5c-fab6-43e2-948c-18990b1e8fe1";
-        public static string CLIENT_SECRET = "l_3fR4z2T4okcFVb8-LU3A.F.-xRlL7y2n";
+        public static string BASESECRETURI = "https://ssn-key-vaults-20210224.vault.azure.net/";
+        public static string CLIENT_ID ="91eb575a-bf1a-40fc-af6c-a617beeee7c1";
+        public static string CLIENT_SECRET = "9xEe.4pgoXk24ea-_gB41OrL60vx4hW~BF";
     
         static KeyVaultClient kvc = null;
 
@@ -70,7 +70,7 @@ namespace AzureKeyVault
             string secretName = "ssn-secret-test-pc-20210224";
             SecretBundle secret = await kvc.GetSecretAsync(BASESECRETURI + @"secrets/" + secretName); //.ConfigureAwait(false).GetAwaiter().GetResult();
 
-            writeSecrets();
+            // writeSecrets();
         }
 
         private static async Task writeSecrets()
@@ -93,7 +93,7 @@ namespace AzureKeyVault
             string secretValue = "__value__PS-312-AzureStorageTable__value";
 
             //SecretBundle bundle = await kvc.SetSecretAsync(BASESECRETURI, secretName, secretValue, tags, contentType, attrs);
-            await kvc.DeleteSecretAsync(BASESECRETURI, secretName);
+          //  await kvc.DeleteSecretAsync(BASESECRETURI, secretName);
              
         }
 
